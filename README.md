@@ -4,7 +4,7 @@
 > yum update
 > 
 #### если CentOS 8 - и ошибка обновления
-> sudo sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*. 
+> sudo sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*  
 > sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 
 ### Ставим нужный софт
@@ -15,7 +15,7 @@
 ### Монтируем tempfs в каталог /tmp
 > mount -t tmpfs tmpfs /tmp
 ### Загружаем Image файл CHR RouterOS с сайта MikroTik.
-> cd /tmp. 
+> cd /tmp   
 > wget https://download.mikrotik.com/routeros/7.1.5/chr-7.1.5.img.zip
 ### Распаковываем скачанный образ из архива
 > unzip chr-7.1.5.img.zip
@@ -23,7 +23,7 @@
 > dd if=chr-7.1.5.img of=/dev/vda bs=4M oflag=sync
 ### Где vda диск системы, узнать диск можно командой fdisk -l
 ### Принудительная перезагрузка
-> echo 1 > /proc/sys/kernel/sysrq. 
+> echo 1 > /proc/sys/kernel/sysrq  
 > echo b > /proc/sysrq-trigger
 
 ### Устанавливаем настройки интерфейсов, настройки берем из ранее записанных.
