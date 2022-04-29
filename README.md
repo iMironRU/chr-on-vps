@@ -2,6 +2,11 @@
 
 ### Обновляем CenteOS
 > yum update
+> 
+#### если CentOS 8 - и ошибка обновления
+> sudo sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
+> sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
+
 ### Ставим нужный софт
 > yum install -y wget unzip net-tools
 ### Смотрим настойки сети
